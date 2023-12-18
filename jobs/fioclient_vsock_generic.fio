@@ -1,0 +1,18 @@
+# Example network job, just defines two clients that send/recv data
+[global]
+ioengine=net
+port=8888
+protocol=vsock
+size=100g
+runtime=5
+pingpong=1
+cpus_allowed_policy=split
+cpus_allowed=11
+
+
+[sender]
+# set the 'hostname' option to the CID of the listening domain
+hostname=3
+startdelay=1
+rw=write
+

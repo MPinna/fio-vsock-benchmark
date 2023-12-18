@@ -1,0 +1,15 @@
+# Example network job, just defines a receiver 
+[global]
+ioengine=net
+port=8888
+protocol=vsock
+bs=4096
+size=100g
+runtime=5
+pingpong=1
+cpus_allowed_policy=split
+cpus_allowed=3
+
+[receiver]
+listen
+rw=read
